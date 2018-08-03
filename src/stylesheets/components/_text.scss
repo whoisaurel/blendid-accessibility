@@ -8,14 +8,6 @@ body {
   margin: 0;
 }
 
-.fonts-loaded-1 > body {
-  font-family: $googlefont-1;
-}
-
-.lte-ie8 > body {
-  font-family: $googlefont-1;
-}
-
 a {
   color: $maincolor;
   text-decoration: none;
