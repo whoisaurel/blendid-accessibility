@@ -16,7 +16,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <title itemprop='name'>{% block title %}{{ title.Site }}{% endblock %}</title>
+    <title itemprop='name'>Blendid Site</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -57,19 +57,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-{% include "layouts/menu.html" %}
+<header id="header" class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="wrapper">
+        <div class="header__logo">
+            <a href="#" class="header__logo-link">
+                <img src="" width="" height="" alt="">
+            </a>
+        </div>
+    </div>
+
+    <nav id="menu" class="menu menu__mobile" role="navigation" itemscope
+         itemtype="http://schema.org/SiteNavigationElement">
+        <div class="wrapper">
+            <ul>
+                <li itemprop="url">
+                    <a href="home.html" itemprop="name">menu item</a>
+                    <ul>
+                        <li itemprop="url"><a href="index.html" itemprop="name">menu item</a></li>
+                        <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                        <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                        <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                        <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                        <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                    </ul>
+                </li>
+                <li class="current-menu-item" itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+                <li itemprop="url"><a href="#" itemprop="name">menu item</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <main id="main__content" class="main__content" role="main" itemscope itemprop="mainContentOfPage"
       itemtype="http://schema.org/Blog">
     <div class="wrapper">
-        {% block content %}{% endblock %}
+        
+THIS HOME
+
     </div>
 </main>
 
-{% include "layouts/footer.html" %}
+<footer class="footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="wrapper">
+        <p>Follow us:</p>
+        <span itemscope itemtype="http://schema.org/Organization">
+					  <link itemprop="url" href="http://www.your-company-site.com">
+					  <a itemprop="sameAs" target="_blank" rel="noopener"
+                         href="http://www.facebook.com/your-company">FB</a>
+					  <a itemprop="sameAs" target="_blank" rel="noopener" href="http://www.twitter.com/YourCompany">Twitter</a>
+					</span>
+    </div>
+</footer>
 
-{% block javascript %}
+
 <script src="javascripts/app.js"></script>
-{% endblock %}
+
 </body>
 </html>

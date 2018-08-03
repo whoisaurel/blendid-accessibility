@@ -1,3 +1,9 @@
 {
-  "message": "Blendid!"
+  "message": "Blendid message !",
+  "title": {
+    "Site": "Blendid Site"
+  },
+  "alert": {
+    "PageNotFound": "Page not found"
+  }
 }
