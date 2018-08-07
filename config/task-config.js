@@ -14,6 +14,16 @@ module.exports = {
       app: ["./app.js"]
     }
   },
+  
+  stylesheets: {
+    autoprefixer: {
+      browsers: ["last 3 version"]
+    },
+    sass: {
+      indentedSyntax: true
+    },
+    extensions: ["sass", "scss", "css"]
+  },
 
   browserSync: {
     server: {
