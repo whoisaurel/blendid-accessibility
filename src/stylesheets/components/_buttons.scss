@@ -18,11 +18,6 @@
   border: none;
   color: $maincolor;
   background: rgba(0, 0, 0, 0);
-  //@include transition(all .2s ease-in-out);
-
-  //@include hover {
-  //  //@include transition(all .2s ease-in-out);
-  //}
 }
 
 /* Btn
@@ -53,10 +48,6 @@ Button {
   ----------------------------------------------------------------------------------------------------*/
   &-main {
     background: $maincolor;
-
-    //@include hover {
-    //  color: $white;
-    //}
   }
 
   &-second {

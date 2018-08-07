@@ -11,28 +11,23 @@ body {
 a {
   color: $maincolor;
   text-decoration: none;
-  //@include transition(all .2s ease-in-out);
+  
+}
 
-  //@include hover {
-  //  color: $maincolor;
-  //  //@include transition(all .2s ease-in-out);
-  //}
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
+img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Headings
 ----------------------------------------------------------------------------------------------------*/
 $headings: (
-        h1: 40,
-        h2: 32,
-        h3: 28,
-        h4: 24,
-        h5: 20,
-        h6: 16
+h1: 40,
+h2: 32,
+h3: 28,
+h4: 24,
+h5: 20,
+h6: 16
 );
 
 @each $heading-name, $heading-font-size in $headings {
@@ -42,13 +37,18 @@ $headings: (
   }
 }
 
+h1{
+  transition: all .2s ease;
+  display: block;
+}
+
 /* Lists
 ----------------------------------------------------------------------------------------------------*/
 ol,
 ul {
   margin: 0;
   padding: 0;
-
+  
   ol,
   ul {
     padding: 0 0 0 20px;
@@ -95,7 +95,7 @@ blockquote {
   margin: 0 0 20px 0;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-
+  
   p:last-child {
     margin: 0;
   }
@@ -116,7 +116,7 @@ table {
   border-collapse: collapse;
   border-left: 0;
   //@include border-radius(3px);
-
+  
   th {
     padding: 10px;
     border-left: 1px solid $black;
@@ -207,39 +207,22 @@ sup {
 /* Text
 ----------------------------------------------------------------------------------------------------*/
 .text {
-
+  
   /* Text || Classic
   ----------------------------------------------------------------------------------------------------*/
   $text: (
-          left: left,
-          center: center,
-          right: right,
-          lowercase: lowercase,
-          uppercase: uppercase,
-          capitalize: capitalize,
-          justify: justify
+  left: left,
+  center: center,
+  right: right,
+  lowercase: lowercase,
+  uppercase: uppercase,
+  capitalize: capitalize,
+  justify: justify
   );
-
+  
   @each $text-name, $text-style in $text {
     &-#{$text-name} {
       text-align: $text-style !important;
     }
-  }
-
-  /* Text || Custom
-  ----------------------------------------------------------------------------------------------------*/
-
-}
-
-/* Title
-----------------------------------------------------------------------------------------------------*/
-.title {
-
-  &-main {
-
-  }
-
-  &-second {
-
   }
 }

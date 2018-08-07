@@ -13,13 +13,13 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  //@include size(1px, 1px);
 }
 
 img,
 iframe {
   max-width: 100%;
-  //@include size(auto, auto);
+  width: auto;
+  height: auto;
 }
 
 .hide {

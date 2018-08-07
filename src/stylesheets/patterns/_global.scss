@@ -1,8 +1,8 @@
 /* Background color
 ----------------------------------------------------------------------------------------------------*/
 $bg-colors: (
-        bg-white: $white,
-        bg-1: $color-1
+bg-white: $white,
+bg-1: $color-1
 );
 
 @each $bg-color-name, $color in $bg-colors {
@@ -14,8 +14,8 @@ $bg-colors: (
 /* Text color
 ----------------------------------------------------------------------------------------------------*/
 $text-colors: (
-        color-white: $white,
-        color-1: $color-1
+color-white: $white,
+color-1: $color-1
 );
 
 @each $text-color-name, $color in $text-colors {
