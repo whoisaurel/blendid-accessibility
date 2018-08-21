@@ -29,36 +29,36 @@ Button {
 .btn {
   color: $white;
   @extend %classic;
-
+  
   /* Btn || Classic
   ----------------------------------------------------------------------------------------------------*/
   &-small {
     @extend %small;
   }
-
+  
   &-medium {
     @extend %medium;
   }
-
+  
   &-large {
     @extend %large;
   }
-
+  
   /* Btn || Custom
   ----------------------------------------------------------------------------------------------------*/
   &-main {
     background: $maincolor;
   }
-
+  
   &-second {
-
+    
   }
-
+  
   &-dropdown {
     background: $maincolor;
     cursor: pointer;
   }
-
+  
   /* Btn || Outline
   ----------------------------------------------------------------------------------------------------*/
   &-outline {
