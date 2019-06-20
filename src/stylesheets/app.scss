@@ -1,23 +1,23 @@
-//Main sass config files
-@import "components/_variables";
+//Abstracts
+@import "abstracts/variables";
+@import "abstracts/clearfix";
 
-//Mixins
-@import "mixins/_clearfix";
+//Base
+@import "base/normalize";
 
-//Main websites components
-@import "components/_normalize";
+//Components
 @import "components/_buttons";
 @import "components/_text";
 @import "components/_utility";
 
-//Main websites patterns
-@import "patterns/_article";
-@import "patterns/_breadcrumb";
-@import "patterns/_footer";
-@import "patterns/_global";
-@import "patterns/_header";
-@import "patterns/_layout";
-@import "patterns/_menus";
+//Layout
+@import "layout/article";
+@import "layout/breadcrumb";
+@import "layout/footer";
+@import "layout/global";
+@import "layout/header";
+@import "layout/layout";
+@import "layout/menus";
 
 //Pages
 @import "pages/_404";
