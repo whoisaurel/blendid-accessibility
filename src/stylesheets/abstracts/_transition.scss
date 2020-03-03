@@ -1,0 +1,14 @@
+@mixin transition {
+  transition: all .25s ease-in-out;
+}
+
+@mixin transition-long {
+  transition: all 2s cubic-bezier(.19,1,.22,1);
+}
+
+
+/**
+.element {
+  @include transition;
+}
+*/

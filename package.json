@@ -1,7 +1,7 @@
 {
-  "name": "blendid",
-  "version": "4.5.0",
-  "description": "A full featured configurable asset pipeline and static site builder",
+  "name": "blendid-accessibility",
+  "version": "1.1.0",
+  "description": "",
   "license": "MIT",
   "engines": {
     "node": ">=6.11.1",
@@ -29,7 +29,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-1": "^6.24.1",
-    "blendid": "^4.4.3",
+    "blendid": "^4.5.3",
     "browser-sync": "^2.26.3",
     "del": "4.0.0",
     "es6-promise": "^4.2.6",
@@ -69,7 +69,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^6.0.2",
-    "stylelint": "^10.0.1"
+    "mocha": "^6.0.2"
   }
 }

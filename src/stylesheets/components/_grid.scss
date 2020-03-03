@@ -1,0 +1,39 @@
+.wrapper {
+  position: relative;
+  max-width: $container;
+  padding-left: $value-1;
+  padding-right: $value-1;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.row {
+  position: relative;
+  margin-left: -$value-1;
+  margin-right: -$value-1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+[class^="col"] {
+  padding-left: $value-1;
+  padding-right: $value-1;
+  margin-bottom: 0;
+}
+
+[class^="col-"] {
+  width: 100%;
+}
+
+.w {
+  &-100 {
+    width: 100%;
+  }
+}

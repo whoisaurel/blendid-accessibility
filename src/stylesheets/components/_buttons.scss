@@ -1,68 +1,67 @@
 /* Extend Btn css
 ----------------------------------------------------------------------------------------------------*/
-%small {
+%s {
+  padding: 5px;
+}
+
+%m {
   padding: 10px;
 }
 
-%medium {
-  padding: 10px 30px;
-}
-
-%large {
-  padding: 10px 50px;
+%l {
+  padding: 10px 20px;
 }
 
 %classic {
   position: relative;
   display: inline-block;
   border: none;
-  color: $maincolor;
-  background: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  letter-spacing: 0;
+  text-decoration: none;
+  background: rgba(map-get($color, c-b), 0);
+  @include transition;
 }
 
 /* Btn
 ----------------------------------------------------------------------------------------------------*/
-Button {
+button {
+  padding: 0;
   @extend %classic;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn {
-  color: $white;
   @extend %classic;
-  
-  /* Btn || Classic
-  ----------------------------------------------------------------------------------------------------*/
-  &-small {
-    @extend %small;
+  @include transition;
+
+  &-s {
+    @extend %s;
   }
-  
-  &-medium {
-    @extend %medium;
+
+  &-m {
+    @extend %m;
   }
-  
-  &-large {
-    @extend %large;
+
+  &-l {
+    @extend %l;
   }
-  
-  /* Btn || Custom
+
+  /* Btn custom
   ----------------------------------------------------------------------------------------------------*/
   &-main {
-    background: $maincolor;
+    color: map-get($color, c-w);
+    background: map-get($color, c-b);
   }
-  
-  &-second {
-    
+
+  &-secondary {
+    color: map-get($color, c-w);
   }
-  
-  &-dropdown {
-    background: $maincolor;
-    cursor: pointer;
+
+  &-radius {
+    border-radius: 3px;
   }
-  
-  /* Btn || Outline
-  ----------------------------------------------------------------------------------------------------*/
-  &-outline {
-    color: $maincolor;
-    border: 1px solid $maincolor;
-  }
-} 
+}

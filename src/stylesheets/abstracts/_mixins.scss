@@ -1,0 +1,318 @@
+@for $i from 1 through $grid-cols {
+  .col-#{$i} {
+    @include mq('m') {
+      flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+      max-width: (100 / ($grid-cols / $i) ) * 1%;
+    }
+  }
+}
+
+/**
+<div class="col-2"></div>
+<div class="col-4"></div>
+<div class="col-12"></div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $color-name, $color-value in $color {
+  @if map_has_key($color, $color-name) {
+    .#{$color-name} {
+      color: $color-value !important;
+    }
+
+    .bg-#{$color-name} {
+      background-color: $color-value !important;
+    }
+  }
+}
+
+/**
+.element {
+  color: map-get($color, color-1);
+}
+
+<p class="c-w"></p>
+<p class="c-1"></p>
+<p class="c-2"></p>
+<div class="bg-c-w></div>
+<div class="bg-c-1"></div>
+<div class="bg-c-2"></div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+/**
+.element {
+  @include placeholder {
+    color: $grey;
+  }
+}
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+.element {
+  @include truncate(100px);
+}
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@mixin arrow($direction, $sizeH, $sizeV, $color) {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $direction == top {
+    border-width: 0 $sizeV $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottom {
+    border-width: $sizeV $sizeH 0 $sizeV;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == left {
+    border-width: $sizeV $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == right {
+    border-width: $sizeV 0 $sizeV $sizeH;
+    border-color: transparent transparent transparent $color;
+  }
+}
+
+/*
+.element {
+  &:before {
+    @include arrow(top, 30px, 30px, #000);
+  }
+}
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@mixin align($vertical: true, $horizontal: false, $position: relative) {
+  @if $position {
+    position: $position;
+  }
+  @if $vertical {
+    top: 50%;
+  }
+  @if $horizontal {
+    left: 50%;
+  }
+
+  @if $vertical and $horizontal {
+    transform: translateX(-50%) translateY(-50%);
+  } @else if $vertical {
+    transform: translateY(-50%);
+  } @else {
+    transform: translateX(-50%);
+  }
+}
+
+/**
+.element {
+  @include align(true, false, relative);
+}
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@mixin is-sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/**
+.element {
+  @include is-sr-only;
+}
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $space in $spaceamounts {
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+
+  .p-x-#{$space} {
+    padding-left: #{$space}px !important;
+    padding-right: #{$space}px !important;
+  }
+
+  .p-y-#{$space} {
+    padding-top: #{$space}px !important;
+    padding-bottom: #{$space}px !important;
+  }
+
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+/**
+<div class="m-t-5">Margin top 5</div>
+<div class="m-b-15">Margin bottom 15</div>
+<div class="p-t-5">Padding top 5</div>
+<div class="p-b-15">Padding bottom 15</div>
+<div class="p-10">Padding 10 (top, right, bottom, left)</div>
+<div class="p-y-5">Padding 5 (top, bottom)</div>
+<div class="p-x-20">Padding 20 (right, left)</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $size in $fontsize {
+  .fs-#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+/**
+<div class="fs-11">Font-size 11px</div>
+<div class="fs-14">Font-size 14px</div>
+<div class="fs-24">Font-size 24px</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $display-name, $display-style in $display {
+  .d-#{$display-name} {
+    display: $display-style !important;
+  }
+}
+
+/**
+<div class="d-f">Display flex</div>
+<div class="d-n">Display none</div>
+<div class="d-ib">Display inline-block</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $text-name, $text-style in $text {
+  .ta-#{$text-name} {
+    text-align: $text-style !important;
+  }
+}
+
+/**
+<div class="ta-l">Text align left</div>
+<div class="ta-c">Text align center</div>
+<div class="ta-r">Text align right</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $justify-name, $justify-style in $justify {
+  .jc-#{$justify-name} {
+    justify-content: $justify-style !important;
+  }
+}
+
+/**
+<div class="jc-s">Justify content start</div>
+<div class="jc-c">Justify content center</div>
+<div class="jc-e">Justify content end</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $direction-name, $direction-style in $direction {
+  .fd-#{$direction-name} {
+    flex-direction: $direction-style !important;
+  }
+}
+
+/**
+<div class="fd-r">Flex direction row</div>
+<div class="fd-c">Flex direction column</div>
+<div class="fd-cr">Flex direction column-reverse</div>
+*/
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $alignment-name, $alignment-style in $alignment {
+  .ai-#{$alignment-name} {
+    align-items: $alignment-style !important;
+  }
+}
+
+/**
+<div class="ai-s">Align items start</div>
+<div class="ai-c">Align items center</div>
+<div class="ai-e">Align items end</div>
+*/
+
+
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------*/
+@each $position-name, $position-style in $position {
+  .p-#{$position-name} {
+    position: $position-style !important;
+  }
+}
+
+/**
+<div class="p-r">Position relative</div>
+<div class="p-a">Position absolute</div>
+*/

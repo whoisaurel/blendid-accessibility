@@ -1,41 +1,93 @@
-// Container
-$container: 1260px;
-// Value for padding col- and row
-$value-1: 15px;
+/* Container value
+----------------------------------------------------------------------------------------------------*/
+$container: 1230px;
 
-//Fonts
-$font-sansserif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+/* Column number
+----------------------------------------------------------------------------------------------------*/
+$grid-cols: 12;
 
-$font-serif: Times, Georgia, serif;
-$googlefont-1: Roboto, sans-serif;
+/* Value for padding col- and row
+----------------------------------------------------------------------------------------------------*/
+$value-1: 8px;
 
-// Font Sizes
-$base-font-size: 16px;
+/* Typo
+----------------------------------------------------------------------------------------------------*/
+$montserrat-regular: "montserrat-regular", "Arial", sans-serif;
 
-// Line height
-$base-line-height: 1.4;
-$heading-line-height: 1.2;
+/* Breakpoint
+----------------------------------------------------------------------------------------------------*/
+$breakpoints: (
+  "m": 768px,
+  "l": 992px,
+  "xl": 1200px
+);
 
-//Colors
-$maincolor: #e7484a;
-$textcolor: #333;
-$transparent: rgba(0, 0, 0, 0);
+/* Color
+----------------------------------------------------------------------------------------------------*/
+$color: (
+  c-w: #fff,
+  c-b: #000,
+  c-1: #0A259C,
+  c-2: #FF6A65
+);
 
-$white: #fff;
-$black: #000;
+/* Gutter & margin
+----------------------------------------------------------------------------------------------------*/
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40);
+$sides: (top, bottom, left, right);
 
-$color-1: #9a9da6;
-$color-2: #ccc;
+/* Font-size
+----------------------------------------------------------------------------------------------------*/
+$fontsize: (10, 12, 14, 16, 18, 20, 22, 24);
 
-//Breakpoint
-$tablet-medium: 768px;
-$desktop-small: 1024px;
-$desktop-medium: 1260px;
+/* Display
+----------------------------------------------------------------------------------------------------*/
+$display: (
+  b: block,
+  f: flex,
+  n: none,
+  ib: inline-block
+);
 
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: (
-25: 25%,
-50: 50%,
-75: 75%,
-100: 100%
-)
+/* Text align
+----------------------------------------------------------------------------------------------------*/
+$text: (
+  l: left,
+  c: center,
+  r: right
+);
+
+/* Justify content
+----------------------------------------------------------------------------------------------------*/
+$justify: (
+  c: center,
+  fs: flex-start,
+  fe: flex-end,
+  sb: space-between
+);
+
+/* Flex direction
+----------------------------------------------------------------------------------------------------*/
+$direction: (
+  r: row,
+  c: column,
+  cr: column-reverse
+);
+
+/* Align items
+----------------------------------------------------------------------------------------------------*/
+$alignment: (
+  fs: flex-start,
+  c: center,
+  fe: flex-end,
+  e: end,
+  s: stretch,
+  b: baseline
+);
+
+/* Position
+----------------------------------------------------------------------------------------------------*/
+$position: (
+  r: relative,
+  a: absolute
+);
