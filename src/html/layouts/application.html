@@ -58,7 +58,21 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="" />
 
-  <link rel="stylesheet" href="stylesheets/app.css">
+  <link
+    rel="stylesheet"
+    href="stylesheets/critical.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+    as="style"
+    type="text/css"
+    media="all">
+  <link
+    rel="stylesheet"
+    href="stylesheets/app.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+    as="style"
+    type="text/css"
+    media="all">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -67,8 +81,7 @@
 {% include "layouts/menu.html" %}
 
 <main
-  id="main__content"
-  class="main__content"
+  class="main"
   role="main"
   itemscope
   itemprop="mainContentOfPage"
