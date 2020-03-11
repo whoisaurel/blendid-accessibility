@@ -3,3 +3,13 @@
 {% block content %}
 <h1 data-module="example">{{ alert.PageNotFound }}</h1>
 {% endblock %}
+
+{% block stylesheets %}
+<link
+  rel="stylesheet"
+  href="stylesheets/page-404.css"
+  onload="this.onload=null;this.rel='stylesheet'"
+  as="style"
+  type="text/css"
+  media="all">
+{% endblock %}
