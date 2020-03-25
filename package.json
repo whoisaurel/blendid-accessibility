@@ -21,7 +21,9 @@
     "gulp": "gulp",
     "build": "gulp build",
     "gh-pages": "gulp gh-pages",
-    "dev:test": "mocha ./gulpfile.js/**/*.test.js"
+    "dev:test": "mocha ./gulpfile.js/**/*.test.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
@@ -68,6 +70,7 @@
     "webpack-hot-middleware": "^2.18.2"
   },
   "devDependencies": {
+    "@storybook/html": "^5.3.17",
     "chai": "^3.5.0",
     "mocha": "^6.0.2"
   }
